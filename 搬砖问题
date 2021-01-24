@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+	int men, women, children;
+	int menM = 15, womenM = 23, childrenM = 90;//单独去搬砖 所需的最大人数
+	int i, j, k;
+	for (i = 0; i <= menM; i++)
+	{
+		for (j = 0; j <= womenM; j++)
+		{
+			for (k = 0; k <= childrenM; k++)
+			{
+				if (3 * i + 2 * j + (k*1.0)/2 == 45 && i + j + k == 45)
+					printf("men=%d,women=%d,children=%d\n", i, j, k);
+			}
+		}
+	}
+}a
