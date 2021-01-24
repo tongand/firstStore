@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+	int character=0, digit=0, blank=0, other=0;  //统计各个数符的值；
+	printf("请输入一串字符！\n");
+	char c;
+	while ((c=getchar())!='\n')
+
+	{
+		if (c >='a' && c <='z' || c >= 'A' && c <= 'Z')
+			character++;
+		else if (c >= '0' && c <= '9')
+			digit++;
+		else if (c == ' ')
+			blank++;
+		else
+		{
+			other++;
+		}
+		
+	}
+	printf("character=%d,blank=%d,digit=%d,other=%d", character, blank, digit, other);
+	return 0;
+}
