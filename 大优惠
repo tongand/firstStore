@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+	int K, M;
+	int day = 0;
+	printf("请输入两个整数K，M，并且  2<=K<=M<=1000\n");
+	scanf_s("%d%d", &M, &K);
+	for (;;)
+	{
+		day++;
+		if (M + day / K == day)
+			break;
+	}
+	printf("%d", day);
+}
