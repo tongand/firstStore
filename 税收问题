@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main()
+{
+	float money;//月收入
+	float sum;//税收
+	printf("请输入一个月的收入.\n");
+	scanf_s("%f", &money);
+	if (money <= 1000)
+	{
+		sum = 0;
+	}
+	else if (money > 1000 && money <= 5000)
+	{
+		sum = (money - 1000) * 0.05;
+	}
+	else if (money > 5000 && money <= 10000)
+	{
+		sum = 4000 * 0.05 + (money - 5000) * 0.1;
+	}
+	else if (money > 10000)
+	{
+		sum = 4000 * 0.05 + 5000 * 0.1 + (money - 10000) * 0.2;
+	}
+	printf("%.2f\n", sum);
+
+}
