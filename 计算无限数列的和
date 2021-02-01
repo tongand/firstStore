@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main()
+{
+	int n, i;
+	float sum = 0;
+	int fenm = 0;
+	printf("请输入一个正整数n，并且1<=n<=20\n");
+	scanf_s("%d", &n);
+	for (i = 1; i <= n; i++)
+	{
+		fenm = 3 * i - 2;
+		if (i % 2 == 0)
+			fenm = -fenm;//实现正负交替
+		sum = sum + 1.0 / fenm;
+	}
+	printf("%.3f\n", sum);
+}
