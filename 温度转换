@@ -1,0 +1,10 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	double f, c;//华氏温度f，摄氏温度c
+	printf("输入要转换的华氏温度.\n");
+	scanf_s("%lf", &f);
+	c = 5 * 1.0 / 9 * (f - 32);
+	printf("%.2lf\n", c);
+}
