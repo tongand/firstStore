@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	double x;
+	double y;
+	printf("请输入x的值,x是属于-20到20的实数.\n");
+	scanf_s("%lf", &x);
+	if (x < 0)
+		y = (x + 1) * (x + 1) + 2 * x + 1.0 / x;
+	else
+	{
+		y = sqrt(x);
+	}
+	printf("%.2lf\n", y);
+
+}
