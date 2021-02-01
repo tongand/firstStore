@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+	float sum1, sum2;
+	int minute;
+	printf("请输入一个月打电话的时间.\n");
+	scanf_s("%d", &minute);
+	sum1 = 0.6 * minute;
+	sum2 = 0.4 * minute + 50;
+	if (sum1 < sum2)
+	{
+		printf("%.2f\n", sum1);
+	}
+	else
+	{
+		printf("%.2f\n", sum2);
+	}
+}
