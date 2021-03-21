@@ -1,0 +1,216 @@
+
+/*第一题*/
+/*#include <stdio.h>
+#include <string.h>
+struct bdata
+{
+	int id;
+	char bname[20];
+	float price;
+};
+
+int findbook(struct bdata st[], int n, char s[])
+{
+	int i;
+	for (i = 0; i < n; i++)
+	{
+		if (strcmp(s, st[i].bname) == 0)
+			return i+1;
+	}
+	if(i==n)
+	return -1;
+	
+}
+
+void main()
+{
+	//实现时，请添加、赋予若干组实验数据用于测试
+	struct bdata book[100] = { {201802,"明朝惊天疑案",37},
+						{201803,"世界未解之迷",28},
+						{201801,"金陵往事",56},
+						{201806,"世说新语",17} };
+	char st[20];
+	int index;
+	printf("请输入要查找书名：");
+	gets(st);
+	index = findbook(book,4,st);
+	if (index == -1)
+		printf("%s的书未找到\n", st);
+	else
+		printf("%s的书在%d位置\n", st, index);
+}*/
+
+/*第二题*/
+/*#include<stdio.h>
+#include<math.h>
+struct point
+{
+	int x;
+	int y;
+};
+double cntdis(struct point dian1, struct point dian2);
+int main()
+{
+	int i;
+	 struct point dian1;
+	 struct point dian2;
+	 double distance;
+	printf("input two points\n");
+	scanf_s("%d%d", &dian1.x, &dian1.y);
+	scanf_s("%d%d", &dian2.x, &dian2.y);
+	distance = cntdis(dian1, dian2);
+	printf("distance is :%.2lf", distance);
+	return 0;
+}
+double cntdis(struct point dian1, struct point dian2)
+{
+	float distance;
+	distance = sqrt((dian1.x - dian2.x) * (dian1.x - dian2.x) + (dian1.y - dian2.y) * (dian1.y - dian2.y));
+	return distance;
+
+}*/
+/*第三题*/
+/*#include<stdio.h>
+#include<time.h>
+#include<stdlib.h>
+struct point
+{
+	int x;
+	int y;
+}dian[100];
+int main()
+{
+	int i, num = 0;
+	srand((unsigned int)time(NULL));
+	printf("前面为x，后面为y，生成的点为：\n");
+	for (i = 0; i < 100; i++)
+	{
+		dian[i].x = rand() % 19;
+		dian[i].y = rand() % 19;
+		printf("%d %d    ", dian[i].x, dian[i].y);
+	}
+	for (i = 0; i < 100; i++)
+	{
+		if ((dian[i].x * dian[i].x + dian[i].y * dian[i].y) <= 64)
+			num++;
+	}
+	printf("\n");
+	printf("the totle of num is :%d\n", num);
+	return 0;
+}*/
+
+/*第四题*/
+/*#include <stdio.h>
+
+//定义结构体Student,学生姓名不超过10个字符
+//三门课程成绩均为百分制，只取整数；平均分带小数
+struct  Student
+{
+	char name[20];//代码段1
+	int a, b, c;
+	float aver;
+}stu[3];
+
+int main()
+{
+	//定义结构体数组stud[5]
+	//对input()、average()、print()三个函数进行声明
+	//调用input()、average()、print()三个函数
+	//代码段2
+		void input(struct Student stu[3]);
+		void average(struct Student stu[3]);
+		void print(struct Student stu[3]);
+		input(stu);
+		average(stu);
+		print(stu);
+	return 0;
+}
+
+//定义输入n名学生的姓名、三门课程成绩的函数。
+void input(struct Student stu[3])
+{
+	//代码段3
+	printf("input information\n");
+	int i;
+	for (i = 0; i < 3; i++)
+	{
+		scanf_s("%s", &stu[i].name, 20);
+		scanf_s("%d%d%d", &stu[i].a, &stu[i].b, &stu[i].c);
+		printf("\n");
+	}
+	
+}
+
+
+
+//定义计算n名学生各自三门课程平均分的函数，用以计算每位学生三门课程的平均分，并存放于对应结构体变量的成员变量(字段)aver中。
+void average(struct Student stu[3])
+{
+	//代码段4
+	int i;
+	for(i = 0; i < 3; i++)
+	{
+		stu[i].aver = ((stu[i].a + stu[i].b + stu[i].c) * 1.0) / 3;
+	}
+}
+
+//定义输出n名学生的姓名、三门课程成绩、平均分的函数。学生信息输出如下图所示
+void print(struct Student stu[3])
+{
+	//代码段5
+	int i;
+	printf("学生成绩列表：\n");
+	for (i = 0; i < 3; i++)
+	{
+		printf("姓名：%s  A课程成绩：%d  B课程成绩： %d  C课程成绩：%d 平均分：%f\n",stu[i].name,stu[i].a,stu[i].b,stu[i].c,stu[i].aver);
+	}
+	printf("\n");
+}*/
+
+/*第五题*/
+#include<stdio.h>
+struct date
+{
+	char name[20];
+	int year;
+	int money;
+}worker[3];
+int a[3] = { 0 };
+void addsal(struct date worker[]);
+void displaydata(struct date worker[]);
+int main()
+{
+	struct  date worker[3] = { {"张三",40,1800},{"李四",25,1500},{"王五",55,3000} };
+	addsal(worker);
+	displaydata(worker);
+	return 0;
+}
+void addsal(struct date worker[])
+{
+	int i;
+	for (i = 0; i < 3; i++)
+	{
+		if (worker[i].year >= 30)
+			a[i] = worker[i].money + 1000;
+		else
+		{
+			a[i] = worker[i].money;
+		}
+	}
+}
+void displaydata(struct date worker[])
+{
+	int i;
+	printf("变化前的职工信息：\n");
+	for (i = 0; i < 3; i++)
+	{
+		printf("%s ", worker[i].name);
+		printf("工作时间：%d  工资：%d \n", worker[i].year, worker[i].money);
+	}
+	printf("变化后的职工信息：\n");
+	for (i = 0; i < 3; i++)
+	{
+		printf("%s ", worker[i].name);
+		printf("工作时间：%d  工资：%d \n", worker[i].year, a[i]);
+	}
+}
